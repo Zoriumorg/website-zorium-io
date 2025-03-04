@@ -35,7 +35,7 @@ const Welcome = () => {
                 <h1 className='text-3xl sm:text-5xl lg:text-6xl font-bold text-center lg:mt-16 md:mt-14 mt-10 font-DM-sans'>Welcome to Zorium</h1>
                 <p className='text-base md:text-lg sm:mt-5 mt-3 text-center font-DM-sans'>The leading platform for innovative apps and blockchain networks</p>
             </div>
-            <div className='grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1  md:gap-0 gap-7 place-items-center place-content-center container mx-auto mt-14 text-center'>
+            <div className='grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1  md:gap-0 gap-7 place-items-center place-content-center max-w-screen-2xl  px-2 mx-auto mt-14 text-center'>
                 {Cards.map(({ id, icon, title, description }) => (
                     <div key={id} className='flex items-center flex-col gap-1  font-DM-sans'>
                         <Image src={icon} alt={title} height={80} width={80}   />

@@ -4,7 +4,9 @@ import React from 'react'
 import Banner from './Banner'
 import Welcome from './Welcome'
 import UseCases from './UseCases'
-import Activity from './Activity'
+import ZorStore from './ZorStore'
+import Learn from './Learn'
+import Ecosystem from './Ecosystem'
 
 const LearnComponent = () => {
   return (
@@ -13,7 +15,9 @@ const LearnComponent = () => {
       <Banner />
       <Welcome />
       <UseCases/>
-      <Activity />
+      <ZorStore />
+      <Learn/>
+      <Ecosystem/>
 
     </div >
   )

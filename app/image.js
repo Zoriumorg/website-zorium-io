@@ -24,6 +24,8 @@ import Zeero0x from "../public/Explore/0x.svg";
 import Zeero0xPPL from "../public/Explore/0xPPL.svg";
 import Across from "../public/Explore/Across.svg";
 import Zeero0xSplitsL from "../public/Explore/0xSplits.svg";
+import LearnZorium from '@/public/assets/learn/LearnZorium.png'
+import EconsystemBg from '@/public/assets/learn/EconsystemBg.svg'
 
 
 const activityImages = Array.from({ length: 76 }, (_, i) =>
@@ -33,4 +35,5 @@ const activityImages = Array.from({ length: 76 }, (_, i) =>
 
 
 
-export { Logo, heroSection, WalletIcon, appsIcon, networksIcon, zorIcon, MobileHeroSection, bitcoin, zorWalletLogo, Financial, usecasesNetwork, usecasesInternet, activityImages, FirstBuildImg, SecondBuildImg, Ecosystem, Grants, Credits, InvolvedImg, NoticedImg, BuildingBenar, footerZorium, ExploreMain, Zeero0x, Zeero0xPPL, Across, Zeero0xSplitsL }
+export { Logo, heroSection, WalletIcon, appsIcon, networksIcon, zorIcon, MobileHeroSection, bitcoin, zorWalletLogo, Financial, usecasesNetwork, usecasesInternet, activityImages, FirstBuildImg, SecondBuildImg, Ecosystem, Grants, Credits, InvolvedImg, NoticedImg, BuildingBenar, footerZorium, ExploreMain, Zeero0x, Zeero0xPPL, Across, Zeero0xSplitsL, LearnZorium, EconsystemBg }
+
