@@ -10,13 +10,15 @@ import zorWalletLogo from '@/public/assets/learn/zorWalletLogo.svg'
 import Financial from '@/public/assets/learn/usecasesFinancial.svg'
 import usecasesNetwork from '@/public/assets/learn/usecasesNetwork.svg'
 import usecasesInternet from '@/public/assets/learn/usecasesInternet.svg'
+import LearnZorium from '@/public/assets/learn/LearnZorium.png'
+import EconsystemBg from '@/public/assets/learn/EconsystemBg.svg'
 
 
-const activityImages = Array.from({ length: 76 }, (_, i) => 
-    require(`@/public/assets/learn/zor/ActivityImage${i + 1}.png`)
-  );
+const activityImages = Array.from({ length: 76 }, (_, i) =>
+  require(`@/public/assets/learn/zor/ActivityImage${i + 1}.png`)
+);
 
 
 
 
-export { Logo, heroSection, WalletIcon, appsIcon, networksIcon, zorIcon, MobileHeroSection, bitcoin, zorWalletLogo, Financial, usecasesNetwork, usecasesInternet, activityImages }
+export { Logo, heroSection, WalletIcon, appsIcon, networksIcon, zorIcon, MobileHeroSection, bitcoin, zorWalletLogo, Financial, usecasesNetwork, usecasesInternet, activityImages, LearnZorium, EconsystemBg }
