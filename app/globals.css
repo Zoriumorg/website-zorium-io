@@ -4,3 +4,16 @@
 .font-DM-sans {
     font-family: "DM Sans", sans-serif;
 }
+
+.gradient-border {
+    padding-bottom: 12px;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(
+            270deg,
+            rgba(255, 255, 255, 0.65) 3.6%,
+            #0500FF 52%,
+            rgba(255, 255, 255, 0.65) 98.27%
+        )
+        1;
+}
+ 

@@ -14,12 +14,12 @@ const Navbar = () => {
     {
       id: 2,
       pageName: 'Use',
-      pageHref: '#'
+      pageHref: '/explore'
     },
     {
       id: 3,
       pageName: 'Build',
-      pageHref: '#'
+      pageHref: '/developers'
     },
     {
       id: 4,
