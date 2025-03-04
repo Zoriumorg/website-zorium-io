@@ -1,6 +1,6 @@
 import Logo from '@/public/assets/layout/zoriumLogo.svg';
 import heroSection from '@/public/assets/learn/heroSection.svg'
-import MobileHeroSection from '@/public/assets/learn/mobileHero.png'
+import MobileHeroSection from '@/public/assets/learn/MobileHero.png'
 import WalletIcon from '@/public/assets/learn/wallet.png'
 import appsIcon from '@/public/assets/learn/apps.png'
 import networksIcon from '@/public/assets/learn/network.png'
