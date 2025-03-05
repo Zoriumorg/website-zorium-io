@@ -46,11 +46,13 @@ const Navbar = () => {
       <div className='max-w-screen-2xl mx-auto px-2'>
         <div className='flex items-center justify-between sm:my-3 py-4 px-2 sm:p-5'>
           <div className='flex items-center gap-7 lg:gap-12'>
-            <Image
-              src={Logo}
-              width={35}
-              height={35}
-              alt='zorium' />
+            <Link href='/' >
+              <Image
+                src={Logo}
+                width={35}
+                height={35}
+                alt='zorium' />
+            </Link>
 
             <div className='md:flex hidden items-center gap-7 lg:gap-10 font-DM-sans '>
               {NavLinks.map(({ id, pageHref, pageName }) => (
@@ -81,11 +83,13 @@ const Navbar = () => {
             onClick={(e) => e.stopPropagation()}
             className={`flex flex-col top-0 h-screen transition-all duration-500 ease-in-out  fixed sm:w-[65%] w-full bg-white ${isOpen ? "left-0" : "-left-full"} `}>
             <div className='p-1 pt-4 pl-2 flex justify-between items-center'>
-              <Image
-                src={Logo}
-                width={35}
-                height={35}
-                alt='zorium pl-2 ' />
+              <Link href='/'>
+                <Image
+                  src={Logo}
+                  width={35}
+                  height={35}
+                  alt='zorium pl-2 ' />
+              </Link>
               <div className='w-fit' onClick={() => setIsOpen(false)}>
                 <IoClose className='sm:text-3xl text-2xl' />
               </div>
