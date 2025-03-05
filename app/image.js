@@ -18,7 +18,12 @@ import Credits from "../public/Developers/Credits.svg";
 import InvolvedImg from "../public/Developers/Involved.svg";
 import NoticedImg from "../public/Developers/Noticed.svg";
 import BuildingBenar from "../public/Developers/buildingBenar.svg";
-import footerZorium from "../public/footer/footerZorium.svg";
+// import footerZorium from "../public/footer/footerZorium.svg";
+// import footerNew from "../public/footer/footerNew.svg";
+// import Background from "../public/footer/Background.svg";
+// import BannerZorium from "../public/footer/BannerZorium.svg";
+import BannerZoriumBG from "../public/footer/BannerZoriumBG.svg";
+import zoriumFooter from "../public/footer/zoriumFooter.svg";
 import ExploreMain from "../public/Explore/ExploreMain.svg";
 import Zeero0x from "../public/Explore/0x.svg";
 import Zeero0xPPL from "../public/Explore/0xPPL.svg";
@@ -35,5 +40,5 @@ const activityImages = Array.from({ length: 76 }, (_, i) =>
 
 
 
-export { Logo, heroSection, WalletIcon, appsIcon, networksIcon, zorIcon, MobileHeroSection, bitcoin, zorWalletLogo, Financial, usecasesNetwork, usecasesInternet, activityImages, FirstBuildImg, SecondBuildImg, Ecosystem, Grants, Credits, InvolvedImg, NoticedImg, BuildingBenar, footerZorium, ExploreMain, Zeero0x, Zeero0xPPL, Across, Zeero0xSplitsL, LearnZorium, EconsystemBg }
+export { Logo, heroSection, WalletIcon, appsIcon, networksIcon, zorIcon, MobileHeroSection, bitcoin, zorWalletLogo, Financial, usecasesNetwork, usecasesInternet, activityImages, FirstBuildImg, SecondBuildImg, Ecosystem, Grants, Credits, InvolvedImg, NoticedImg, BuildingBenar, ExploreMain, Zeero0x, Zeero0xPPL, Across, Zeero0xSplitsL, LearnZorium, EconsystemBg, zoriumFooter, BannerZoriumBG }
 
