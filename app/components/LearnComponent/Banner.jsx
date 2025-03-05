@@ -5,7 +5,7 @@ import { Canvas } from '@react-three/fiber'
 import Image from 'next/image'
 import React, { Suspense } from 'react'
 import EthObject from './EthObject'
-import { useMediaQuery } from 'react-responsive'
+
 
 const Banner = () => {
 
