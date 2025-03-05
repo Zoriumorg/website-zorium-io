@@ -428,7 +428,7 @@ function MaltipalTabes() {
 
     return (
         <div className='md:mt-[150px] mt-[50px]'>
-            <div className='flex flex-wrap justify-center items-center md:gap-x-5 gap-x-2.5 md:gap-y-[56px] gap-y-5'>
+            <div className='flex flex-wrap md:justify-center items-center md:gap-x-5 gap-x-2.5 md:gap-y-[56px] gap-y-5 '>
                 {btn.map((item, index) => (
                     <button key={index + 1} className={`md:px-9 px-5 md:py-4 py-2  font-bold md:text-[20px] text-xs  rounded-full hover:bg-[#3B37FE] hover:text-white transition-all duration-500 ease-in-out ${activeTab == item.btnTitle ? "text-white bg-[#3B37FE]" : "text-[#3B37FE] bg-[#F8F8F8]"} `} onClick={() => setActiveTab(item.btnTitle)}>{item.btnTitle}</button>
                 ))}

@@ -74,11 +74,11 @@ const Footer = () => {
 
     return (
         <div
-            className='lg:mt-[100px] md:mt-[50px] mt-[10px] relative bg-cover bg-center'
+            className='lg:mt-[100px] md:mt-[0px] mt-[10px] relative bg-cover bg-center'
             style={{ backgroundImage: `url(${BannerZoriumBG.src})` }}
         >
             {/* Content on Top */}
-            <div className="relative w-full max-w-[1440px] mx-auto md:py-10">
+            <div className="relative w-full max-w-[1440px] mx-auto md:py-10 px-2">
                 <div className='grid grid-cols-12 lg:gap-12 gap-0 space-y-1 md:space-y-0 relative z-10'>
                     {menuData.map((section, index) => (
                         <div key={index} className='lg:col-span-3 md:col-span-6 col-span-12 md:w-full   p-4 rounded-lg'>
