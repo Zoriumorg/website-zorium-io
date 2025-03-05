@@ -15,7 +15,7 @@ const Developers = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 gap-10 items-center'>
                 {/* Text Section */}
-                <div className='text-center md:text-left flex flex-col justify-center'>
+                <div className='text-center md:text-left flex flex-col justify-center md:order-1 order-2'>
                     <h2 className='text-[#000000] text-[36px] md:text-[46px] font-bold leading-tight'>
                         Resources for Builders
                     </h2>
@@ -25,7 +25,7 @@ const Developers = () => {
                 </div>
 
                 {/* Image Section */}
-                <div className='flex justify-center md:justify-end'>
+                <div className='flex justify-center md:justify-end md:order-2'>
                     <Image
                         src={FirstBuildImg}
                         alt='home'

@@ -7,8 +7,19 @@ function Explore() {
     return (
         <div className='max-w-[1440px] mx-auto px-4 py-5'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-10 items-center'>
+                {/* Image Section */}
+                <div className='flex justify-center md:justify-end order-1 md:order-2'>
+                    <Image
+                        src={ExploreMain}
+                        alt='home'
+                        height={500}
+                        width={500}
+                        className='w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px]'
+                    />
+                </div>
+
                 {/* Text Section */}
-                <div className='text-center md:text-left flex flex-col justify-center'>
+                <div className='text-center md:text-left flex flex-col justify-center order-2 md:order-1'>
                     <h2 className='text-[#000000] text-[30px] md:text-[46px] font-bold leading-tight'>
                         Base ecosystem apps and integrations overview.
                     </h2>
@@ -18,22 +29,8 @@ function Explore() {
                     </div>
 
                 </div>
-
-                {/* Image Section */}
-                <div className='flex justify-center md:justify-end'>
-                    <Image
-                        src={ExploreMain}
-                        alt='home'
-                        height={500}
-                        width={500}
-                        className='w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px]'
-                    />
-                </div>
             </div>
-
             <MaltipalTabes />
-
-
         </div>
     )
 }
