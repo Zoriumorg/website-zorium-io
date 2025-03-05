@@ -12,11 +12,11 @@ const UseCases = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 lg:grid-rows-5 gap-4 mt-5">
                     {/* First Two Cards */}
-                    <div className="md:col-span-1 lg:col-span-2 lg:row-span-3 lg:h-fit h-full flex justify-center flex-col bg-[#FFEBF2] lg:p-9 p-5 rounded-4xl">
+                    <div className="md:col-span-1 lg:col-span-2 lg:row-span-3  h-full flex justify-center flex-col bg-[#FFEBF2] lg:p-9 p-5 rounded-4xl">
                         <div className="flex justify-center flex-col items-center">
                             <Image src={bitcoin} alt="Crypto without volatility" width={100} height={100} className="w-[250px] h-[250px]" />
                         </div>
-                        <h3 className="text-lg font-medium tracking-widest uppercase font-DM-sans">Crypto without volatility</h3>
+                        <h3 className="text-xl font-semibold tracking-wider uppercase font-DM-sans">Crypto without volatility</h3>
                         <p className="font-DM-sans text-base mt-3 w-[80%]">
                             Stablecoins are currencies that maintain stable value. Their price matches the U.S. dollar or other steady assets.
                         </p>
@@ -32,7 +32,7 @@ const UseCases = () => {
                                 <Image src={Financial} alt="Financial" height={100} width={100} className="lg:w-fit lg:h-full w-[250px] h-[250px]" />
                             </div>
                             <div className="lg:p-10">
-                                <h1 className="uppercase font-DM-sans mt-5 text-lg lg:text-4xl lg:tracking-normal tracking-widest font-normal  lg:font-semibold ">A fairer financial system</h1>
+                                <h1 className="uppercase font-DM-sans mt-5 text-lg lg:text-3xl lg:tracking-normal tracking-widest font-normal  lg:font-semibold ">A fairer financial system</h1>
                                 <p className="lg:text-xl text-base font-DM-sans lg:mt-5 mt-3 w-full lg:w-[70%]">
                                     Billions can't open bank accounts or freely use their money. Ethereum's financial system is always open and unbiased.
                                 </p>
@@ -62,9 +62,9 @@ const UseCases = () => {
                     {/* Last Two Cards in Two Column    s */}
                     <div className="md:col-span-1 lg:col-span-2 lg:row-span-3 lg:col-start-3 lg:row-start-3 bg-[#EBFFFB] h-full flex justify-center flex-col lg:p-9 p-5 rounded-4xl">
                         <div className="flex justify-center flex-col items-center">
-                            <Image src={usecasesNetwork} alt="Crypto without volatility" width={100} height={100} className="w-[250px] h-[250px]" />
+                            <Image src={usecasesNetwork} alt="The network of networks" width={100} height={100} className="w-[250px] h-[250px]" />
                         </div>
-                        <h3 className="text-lg font-medium tracking-widest uppercase font-DM-sans">The network of networks</h3>
+                        <h3 className="text-xl font-semibold tracking-wider uppercase font-DM-sans">The network of networks</h3>
                         <p className="font-DM-sans text-base mt-3 w-[80%]">
                             Ethereum is the hub for blockchain innovation. The best projects are built on Ethereum.
                         </p>
@@ -75,9 +75,9 @@ const UseCases = () => {
 
                     <div className="md:col-span-1 lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-3 bg-[#F2EBFF] h-full flex justify-center flex-col lg:p-9 p-5 rounded-4xl">
                         <div className="flex justify-center flex-col items-center">
-                            <Image src={usecasesInternet} alt="Crypto without volatility" width={100} height={100} className="w-[250px] h-[280px]" />
+                            <Image src={usecasesInternet} alt="The internet of assets" width={100} height={100} className="w-[250px] h-[280px]" />
                         </div>
-                        <h3 className="text-lg font-medium tracking-widest uppercase font-DM-sans">The internet of assets</h3>
+                        <h3 className="text-xl font-semibold tracking-wider uppercase font-DM-sans">The internet of assets</h3>
                         <p className="font-DM-sans text-base mt-3 w-[80%]">
                             Art, certificates or even real estate can be tokenized. Anything can be a tradable token. Ownership is public and verifiable.
                         </p>
