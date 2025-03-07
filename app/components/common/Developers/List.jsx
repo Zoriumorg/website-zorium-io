@@ -29,4 +29,6 @@ const List = ({ data, color, isGrid }) => {
     )
 }
 
+
+
 export default List

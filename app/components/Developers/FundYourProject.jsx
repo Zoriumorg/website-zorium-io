@@ -1,6 +1,13 @@
+
+"use client"
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Credits, Ecosystem, Grants } from '@/app/image'
 import Image from 'next/image'
-import React from 'react'
+
+// GSAP Plugin Register
+gsap.registerPlugin(ScrollTrigger);
 
 // staticData 
 const staticData = [
@@ -25,13 +32,58 @@ const staticData = [
 ];
 
 const FundYourProject = () => {
+    const sectionRef = useRef(null);
+    const cardRefs = useRef([]);
+
+    // Gsap Animetion Useefect
+    useEffect(() => {
+        cardRefs.current.forEach((card) => {
+            gsap.fromTo(
+                card,
+                { opacity: 0, y: 30, scale: 0.95, },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 90%",
+                        end: "top 10%",
+                        toggleActions: "play none none reset",
+                        onEnter: () => {
+                            gsap.to(card, { opacity: 1, y: 0, scale: 1, duration: 0.2 });
+                        },
+                        onLeaveBack: () => {
+                            gsap.set(card, { opacity: 0, y: 30, scale: 0.95, });
+                        },
+                    }
+                }
+            );
+        });
+
+        cardRefs.current.forEach((card) => {
+            card.addEventListener("mouseenter", () => {
+                gsap.to(card, { scale: 1.07, boxShadow: "0px 8px 20px rgba(0,0,0,0.2)", duration: 0.1 });
+            });
+
+            card.addEventListener("mouseleave", () => {
+                gsap.to(card, { scale: 1, boxShadow: "0px 4px 10px rgba(0,0,0,0.1)", duration: 0.1 });
+            });
+        });
+
+    }, []);
+
     return (
-        <div className='lg:mt-32 md:mt-[50px] mt-[20px]'>
+        <div rfc={sectionRef} className='lg:mt-32 md:mt-[50px] mt-[20px]'>
             <div>
                 <h2 className='text-[#000000] lg:text-[40px] md:text-[30px] text-2xl font-bold text-center'>Fund Your Project</h2>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-                    {staticData.map((item) => (
-                        <div key={item.id} className='col-span-1 bg-white rounded-[18px] shadow-[0px_4px_20px_rgba(0,0,0,0.15)] p-6 lg:mt-[50px] md:mt-[20px] mt-[10px]'>
+                    {staticData.map((item, index) => (
+                        <div key={item.id}
+                            ref={(el) => (cardRefs.current[index] = el)}
+                            className='col-span-1 bg-white rounded-[18px] shadow-[0px_4px_20px_rgba(0,0,0,0.15)] p-6 lg:mt-[50px] md:mt-[20px] mt-[10px]'>
                             <div className='flex flex-col space-y-3'>
                                 {/* Icon */}
                                 <Image

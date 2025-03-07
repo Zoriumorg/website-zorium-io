@@ -1,9 +1,14 @@
 
+"use client";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from 'next/image';
+import React from 'react';
+import List from '../common/Developers/List';
+import { SecondBuildImg } from '@/app/image';
 
-import Image from 'next/image'
-import React from 'react'
-import List from '../common/Developers/List'
-import { SecondBuildImg } from '@/app/image'
+gsap.registerPlugin(ScrollTrigger);
 
 // staticData
 const staticData = [
@@ -13,17 +18,38 @@ const staticData = [
     { number: "04", title: "Get Noticed", desc: "Looking for help with distribution? Get noticed by millions of potential new users" },
     { number: "05", title: "Get Involved", desc: "Become an active participant in the Base community" },
     { number: "06", title: "Build Your Project", desc: "Resources that make it easy to build and use your onchain project" }
-]
-
+];
 
 const Essentials = () => {
+    const leftRef = useRef(null);
+
+    // Gsap Animetion Useefect
+    useEffect(() => {
+        gsap.fromTo(
+            leftRef.current,
+            { x: -1000, opacity: 0 },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 1.5,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: leftRef.current,
+                    start: "top 80%",
+                    toggleActions: "play none none reset",
+                },
+            }
+        );
+    }, []);
 
     return (
-        <div className='lg:mt-40 md:mt-[50px] mt-[20px]'>
+        <div className='lg:mt-0 md:mt-[50px] mt-[20px] overflow-hidden'>
             <div className='lg:grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10'>
 
-                {/* Image Section */}
-                <div className='bg-[#ECF0FA] rounded-[40px] p-6 flex justify-center col-span-1 lg:col-span-5 order-1  lg:mt-0 md:mt-5 mt-2.5'>
+                {/* Only this Image section will animate */}
+                <div
+                    ref={leftRef}
+                    className='bg-[#ECF0FA] rounded-[40px] p-6 flex justify-center col-span-1 lg:col-span-5 order-1 lg:mt-0 md:mt-5 mt-2.5'>
                     <Image
                         src={SecondBuildImg}
                         alt="second"
@@ -33,7 +59,7 @@ const Essentials = () => {
                     />
                 </div>
 
-                {/* Text & List Section */}
+                {/* This text section will stay static */}
                 <div className='col-span-1 md:col-span-7 lg:mt-0 md:mt-5 mt-2.5 order-2'>
                     <div>
                         <h2 className='text-black text-2xl md:text-[40px] font-bold'>
@@ -45,11 +71,11 @@ const Essentials = () => {
                     </div>
 
                     {/* Essentials List */}
-                    <List data={staticData} color={"text-[#AD23FF]"} grid={true} />
+                    <List data={staticData} color={"text-[#AD23FF]"} isGrid={true} />
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Essentials
+export default Essentials;

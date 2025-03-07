@@ -1,15 +1,66 @@
+"use client";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import BtnNav from '@/app/components/common/BtnNav/BtnNav'
 import MaltipalTabes from '@/app/components/Explore/MaltipalTabes'
 import { ExploreMain } from '@/app/image'
 import Image from 'next/image'
-import React from 'react'
 
 function Explore() {
+    const imgRef = useRef(null);
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const container = containerRef.current;
+        if (!container) return;
+
+        const handleMouseMove = (event) => {
+            if (!imgRef.current) return;
+
+            const { left, top, width, height } = container.getBoundingClientRect();
+            const x = event.clientX - left;
+            const y = event.clientY - top;
+
+            const xRotation = ((y / height) - 0.5) * 30;
+            const yRotation = ((x / width) - 0.5) * 30;
+
+            gsap.to(imgRef.current, {
+                rotateX: -xRotation,
+                rotateY: yRotation,
+                scale: 1.05,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        };
+
+        const handleMouseLeave = () => {
+            gsap.to(imgRef.current, {
+                rotateX: 0,
+                rotateY: 0,
+                scale: 1,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+        };
+
+        container.addEventListener("mousemove", handleMouseMove);
+        container.addEventListener("mouseleave", handleMouseLeave);
+
+        return () => {
+            container.removeEventListener("mousemove", handleMouseMove);
+            container.removeEventListener("mouseleave", handleMouseLeave);
+        };
+    }, []);
+
     return (
         <div className='max-w-[1440px] mx-auto px-4 py-5'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 items-center '>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 items-center lg:h-[90vh]'>
                 {/* Image Section */}
-                <div className='flex justify-center md:justify-end order-1 md:order-2'>
+                <div
+                    ref={containerRef}
+                    className='flex justify-center md:justify-end order-1 md:order-2'>
                     <Image
+                        ref={imgRef}
                         src={ExploreMain}
                         alt='home'
                         height={500}
@@ -24,8 +75,7 @@ function Explore() {
                         Base ecosystem apps and integrations overview.
                     </h2>
                     <div className='mt-8'>
-
-                        <button className={`md:px-9 px-5 md:py-4 py-2  font-bold md:text-[20px] text-xs hover:text-[#3B37FE] hover:bg-[#F8F8F8]  rounded-full bg-[#3B37FE] text-white transition-all duration-500 ease-in-out `} >Submit your app</button>
+                        <BtnNav btn={"Submit your app"} />
                     </div>
 
                 </div>

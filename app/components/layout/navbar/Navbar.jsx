@@ -1,16 +1,18 @@
 "use client"
 import { Logo } from '@/app/image'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import BtnNav from '../../common/BtnNav/BtnNav'
+import { usePathname } from 'next/navigation'
 
 
 
 const Navbar = () => {
 
+  const pathName = usePathname();
   const [isOpen, setIsOpen] = useState(false)
 
   const NavLinks = [
@@ -43,8 +45,8 @@ const Navbar = () => {
 
   return (
     <div className=' sticky top-0 bg-white z-[999999999999]'>
-      <div className='max-w-screen-2xl mx-auto px-2'>
-        <div className='flex items-center justify-between sm:my-3 py-4 px-2 sm:p-5'>
+      <div className='max-w-screen-2xl mx-auto px-2 border-b gradient-border'>
+        <div className='flex items-center justify-between py-2 px-2 sm:p-3'>
           <div className='flex items-center gap-7 lg:gap-12'>
             <Link href='/' >
               <Image
@@ -54,19 +56,19 @@ const Navbar = () => {
                 alt='zorium' />
             </Link>
 
-            <div className='md:flex hidden items-center gap-7 lg:gap-10 font-DM-sans '>
+            <div className='md:flex hidden items-center gap-1 lg:gap-4 font-DM-sans '>
               {NavLinks.map(({ id, pageHref, pageName }) => (
                 <Link
                   key={id}
                   href={pageHref}
-                  className='text-lg font-normal'
+                  className={`font-medium duration-75 transition-all ease-in-out px-3 py-2 tracking-wider rounded-md ${pathName == pageHref ? "text-[#3B37FE]" : ""} hover:bg-[#3a37fe41] hover:text-[#3B37FE]`}
                 >{pageName}</Link>
               ))}
             </div>
           </div>
 
           <div className='md:block hidden'>
-            <button className='bg-[#3B37FE] hover:bg-white hover:text-[#3B37FE] border-2 border-transparent hover:border-[#3B37FE] text-white  md:px-9 sm:px-6 px-5 cursor-pointer text-base md:text-lg p-2  transition-all duration-500 ease-in-out rounded-full tracking-wide font-DM-sans'>Download App</button>
+            <BtnNav btn={"Download App"} />
           </div>
 
           <div className='md:hidden '>
@@ -77,12 +79,12 @@ const Navbar = () => {
 
       {/* small screen  */}
 
-      <div className={`md:hidden block w-full `}>
+      <div className={`md:hidden block w-full`}>
         <div className={`${isOpen ? "  w-full fixed h-screen top-0 " : ""}`} onClick={() => setIsOpen(!isOpen)}>
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`flex flex-col top-0 h-screen transition-all duration-500 ease-in-out  fixed sm:w-[65%] w-full bg-white ${isOpen ? "left-0" : "-left-full"} `}>
-            <div className='p-1 pt-4 pl-2 flex justify-between items-center'>
+            className={`flex flex-col top-0 h-screen transition-all duration-500 ease-in-out fixed sm:w-[65%] w-full bg-white ${isOpen ? "left-0" : "-left-full"} `}>
+            <div className='p-1 py-2 pl-2 flex justify-between items-center border-b gradient-border'>
               <Link href='/'>
                 <Image
                   src={Logo}
@@ -95,13 +97,13 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className='flex  mt-5   flex-col font-DM-sans '>
+            <div className='flex  mt-2 flex-col font-DM-sans '>
               {NavLinks.map(({ id, pageHref, pageName }) => (
-                <div key={id} className=' border-t border-t-[#C9C9C9]/[25%] py-4 '>
+                <div key={id} className=' border-b border-[#C9C9C9] py-3'>
                   <Link
                     onClick={() => setIsOpen(false)}
                     href={pageHref}
-                    className='text-lg font-normal pl-4'
+                    className='text-lg font-bold pl-4'
                   >{pageName}</Link>
                 </div>
               ))}
